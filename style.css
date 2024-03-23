@@ -1,0 +1,53 @@
+#hexagonBox{
+ 	width: 200vh; 
+    height: 78vh; 
+    background-color: rgb(28,28,28);
+
+}
+.container{
+	display:flex; /* Установка контейнера как flex-контейнера */
+    justify-content: center; /* Центрирование по горизонтали */
+  	margin-top: 20px;
+    height: 100vh; /* Высота контейнера равна высоте видимой части окна браузера */
+}
+svg {
+        display: block;
+        margin: auto;
+    }
+#hexagon{
+	fill: white; 
+	stroke: black;
+    stroke-width: 1px;
+}
+.hide{
+	visibility: hidden;
+}
+.easyTask{
+	width: 25vh; 
+    height: 8vh; 
+    margin-top: 20px;
+    margin-left: 20vh; 
+    cursor: pointer;
+	border-radius: 12px; 
+    transition-duration: 0.4s;
+    text-align: center
+    background-color: #4CAF50;
+    border: none;
+    color: rgb(28,28,28);
+}
+.hardTask{
+	width: 25vh; 
+    height: 8vh; 
+    margin-top: 20px;
+    margin-left: 100vh; 
+    cursor: pointer;
+	border-radius: 12px; 
+    transition-duration: 0.4s;
+    text-align: center
+    background-color: #4CAF50;
+    border: none;
+    color: rgb(28,28,28);
+}
+.back{
+	background-color: rgb(28,28,28); 
+}

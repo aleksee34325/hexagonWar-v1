@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Адаптивные координаты шестиугольника</title>
+<style>
+    #hexagonBox{
+    width: 200vh; 
+    height: 80vh; 
+    background-color: #f0f0f0; 
+    border: 2px solid #000;
+}
+
+#hexagon{
+    fill: white; 
+    border-color: 10px solid black;
+}
+</style>
+</head>
+<body>
+
+<svg id="hexagonBox" xmlns="http://www.w3.org/2000/svg">
+    <polygon id="hexagon" points="25 0, 75 0, 100 43.30, 75 86.60, 25 86.60, 0 43.30"/>
+</svg>
+
+<script>
+    // Функция для обновления координат шестиугольника
+    function updateHexagonCoordinates() {
+        const hexagonBox = document.getElementById('hexagonBox');
+        const hexagon = document.getElementById('hexagon');
+        
+        // Получаем размеры контейнера
+        const width = hexagonBox.clientWidth * 0.025;
+        const height = width * Math.sqrt(3) / 2; // Приближенная высота для правильного шестиугольника
+        
+        // Вычисляем новые координаты вершин шестиугольника
+        const points = [
+            `${0.25 * width} 0`,
+            `${0.75 * width} 0`,
+            `${width} ${0.5 * height}`,
+            `${0.75 * width} ${height}`,
+            `${0.25 * width} ${height}`,
+            `0 ${0.5 * height}`
+        ];
+        
+        // Обновляем атрибут points у элемента polygon
+        hexagon.setAttribute('points', points.join(','));
+        hexagonBox.setAttribute('height', height); // Обновляем высоту SVG
+    }
+
+    // Вызываем функцию при загрузке страницы и при изменении размеров окна
+    window.addEventListener('DOMContentLoaded', updateHexagonCoordinates);
+    window.addEventListener('resize', updateHexagonCoordinates);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+#hexagonBox{
+ 	width: 200vh; 
+    height: 80vh; 
+    background-color: #f0f0f0; 
+    border: 2px solid #000;
+}
+.container{
+	display:flex; /* Установка контейнера как flex-контейнера */
+    justify-content: center; /* Центрирование по горизонтали */
+  	margin-top: 20px;
+    height: 100vh; /* Высота контейнера равна высоте видимой части окна браузера */
+}
+svg {
+        display: block;
+        margin: auto;
+        border: 1px solid black;
+    }
+#hexagon{
+	background-color: white; 
+	border: 4px solid black;
+}
